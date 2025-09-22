@@ -1,0 +1,55 @@
+package elavelabs;
+
+import java.util.Scanner;
+
+public class CalculatorApplication {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner scanner= new Scanner(System.in);
+		double num1= scanner.nextDouble();
+		
+		double num2= scanner.nextDouble();
+		
+		System.out.println("Enter the operator (+,-,*,/):");
+		
+		char op = scanner.next().charAt(0);
+		
+		double result = 0;
+		
+		 switch (op) {
+	        // case to add two numbers
+	        case '+':
+	        	result = num1 + num2;
+	            break;
+
+	        // case to subtract two numbers
+	        case '-':
+	        	result = num1 - num2;
+	            break;
+
+	        // case to multiply two numbers
+	        case '*':
+	        	result = num1 * num2;
+	            break;
+
+	        // case to divide two numbers
+	        case '/':
+	        	 if (num2 == 0) {
+                     System.out.println("❌ Error: Division by zero is not allowed!");
+                     scanner.close();
+                     return; // stop program
+                 } else {
+                     result = num1 / num2;
+                 }
+                 break;
+
+	        default:
+	            System.out.println("You enter wrong input");
+	        }
+
+	    System.out.print(result);
+	}
+
+}
